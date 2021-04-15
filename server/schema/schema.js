@@ -2,8 +2,8 @@ const graphql = require('graphql');
 
 const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLInt, GraphQLList, GraphQLSchema, GraphQLNonNull } = graphql;
 
-const Movies = require('../server/models/movie')
-const Directors = require('../server/models/director')
+const Movies = require('../models/movie')
+const Directors = require('../models/director')
 
 const Mutation = new GraphQLObjectType({
     name: 'Mutation',
