@@ -2,11 +2,14 @@ const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const schema = require('./schema/schema')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const app = express();
 const PORT = 3005;
 
 mongoose.connect(`mongodb+srv://User-1:lhbvvb572@cluster0.lvpar.mongodb.net/GraphQL_Films_App_DB?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
+
+app.use(cors())
 
 app.use('/graphql', graphqlHTTP({
   schema,
